@@ -1,3 +1,5 @@
+import '/public/history.css';
+
 const History = () => {
     return (
         <>

@@ -25,7 +25,6 @@ const Navigation: React.FC<NavigationProps> = ({ setMainContent } ) => {
                 <li><a href="#" onClick={(e) => {setMainContent(<Team/>)}}>Наша команда</a></li>
                 <li><a href="#" onClick={(e) => {setMainContent(<Join/>)}}>Приєднатись до клубу</a></li>
                 <li><a href="#" onClick={(e) => {setMainContent(<Merch/>)}}>Наш мерч</a></li>
-                <li><a href="#" onClick={(e) => {setMainContent(<Music/>)}}>Музика</a></li>
             </ul>
         </nav>
     );

@@ -48,40 +48,24 @@ const MusicPlayer = () => {
         }
     };
 
-
     return (
         <div className="music-player">
-                    <label>{musicSrc}</label>
-
-                    <div className="player-buttons">
-                        <button onClick={prevMusic}>Prev</button>
-                        <button onClick={PlayPause}
-                            style={{
-                                fontSize: "30px",
-                                height: "50px",
-                                width: "50px",
-                                borderRadius: "100%",
-                                lineHeight: "50px",
-                                background: isMusicPlayed ? 
-                                    "linear-gradient(45deg, rgba(0,0,0,.5), rgba(255, 0, 0, 0.3))" : 
-                                    "linear-gradient(45deg, rgba(0,0,0,.5), rgba(0, 255, 76, 0.3))"
-                            }}
-                        >
-                            {isMusicPlayed ? "⏸" : "⏵"}
-                        </button>
-                        <button onClick={nextMusic}>Next</button>
-                    </div>
-
-                    
-
-
-                    <audio
-                        ref={audioRef}
-                        src={`/car_music/${musicSrc}`}
-                        style={{ display: "none" }}
-                        onEnded={() => nextMusic()}
-                    />
-                </div>
+            <div className="track-name">{musicSrc}</div>
+            <div className="player-buttons">
+                <button onClick={prevMusic}>Prev</button>
+                <button onClick={PlayPause}>
+                    {isMusicPlayed ? "⏸" : "⏵"}
+                </button>
+                <button onClick={nextMusic}>Next</button>
+            </div>
+            <audio
+                ref={audioRef}
+                src={`/car_music/${musicSrc}`}
+                style={{ display: "none" }}
+                onEnded={() => nextMusic()}
+            />
+        </div>
     );
 }
+
 export default MusicPlayer;

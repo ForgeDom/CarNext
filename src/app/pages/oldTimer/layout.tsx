@@ -17,7 +17,9 @@ export default function RootLayout({
 }>) {
     return (
         <>
-            <img src="/photos/background.jpg" alt="Background Image" className="background-image" />
+            <div className="background-image-container">
+            
+            </div>
             {children}
         </>
     );

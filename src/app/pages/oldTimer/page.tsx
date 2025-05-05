@@ -4,6 +4,7 @@ import Home from "../../../../components/pages/home";
 import Game from "../../../../components/pages/game";
 import Navigation from "../../../../components/Navigation";
 import MusicPlayer from "../../../../components/MusicPlayer";
+import History from "../../../../components/pages/history";
 
 export default function oldTimer() {
     

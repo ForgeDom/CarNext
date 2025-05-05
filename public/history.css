@@ -1,54 +1,151 @@
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.8;
-  margin: 0;
-  padding: 0;
-}
+html{
+    font-size: 8px;
+  }
 
-.history-section {
-  padding: 20px;
-}
+@media (max-width: 2000px) {
+    html {
+      font-size: 25px;
+    }
+  }
+  
+   /* Tablet screen  */
+  
+  @media (max-width: 768px) {
+    html {
+      font-size: 18px;
+    }
+  }
+  
+  /* Mobile screen  */
+  
+  @media (max-width: 450px) {
+    html {
+      font-size: 12px;
+    }
+  }
 
-h1, h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  text-align: center;
-}
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .history-section {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
 
-.car-item {
-  display: flex;
-  align-items: center;
-  margin: 30px 0;
-}
+  h2{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
 
-.car-photo {
-  width: 1vw;
-  height: 1vw;
-  margin: 0 auto;
-  display: block;
-}
+  h3{
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .car-item {
+    align-items: center;
+    margin: 30px 0 auto;
+  }
+  
+  .car-photo {
+    width: 50vw;
+    /* height: 45vw; */
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .car-text-container {
+    margin: auto;
+    width: 80vw;
+    text-align: justify;
+  }
+  
+  .car-description {
+    text-align: center;
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .car-item:nth-child(odd) {
+    flex-direction: row-reverse; /* Фото справа, текст зліва */
+  }
+  
+  .car-item:nth-child(even) {
+    flex-direction: row; /* Фото зліва, текст справа */
+  }
+  
+  p {
+    margin: 0;
+  }
 
-.car-text-container {
-  width: 40%;
-  font-size: 1.2em;
-  text-align: justify;
-}
+  /* .slider {
+    position: relative;
+    margin: 0 auto;
+    /* max-height: 40%; 
+  }
+  
+  .slider img {
+    height: 40vw;
+    width: 60vw;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    padding: 0.2rem;
+    top:50%;
+    color: white;
+    user-select: auto;
+    background-color: rgba(33, 33, 33, 0.8); 
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .prev {
+    margin-left: 1vw;
+  }
+  
+  .next {
+    margin-right:1vw;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .news-slider-container {
+    margin: 2vh auto;
+    padding: 0px; 
+    background-color: #fff;
+    position: relative;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+  } */
+  .news-item{
+    margin: 5vh 5vw;
+  }
 
-.car-description {
-  text-align: center;
-  font-style: italic;
-  margin-top: 10px;
-  font-size: 1.1em;
-}
-
-.car-item:nth-child(odd) {
-  flex-direction: row-reverse; /* Фото справа, текст зліва */
-}
-
-.car-item:nth-child(even) {
-  flex-direction: row; /* Фото зліва, текст справа */
-}
-
-p {
-  margin: 0;
-}
+  .meeting-vertical-one, .meeting-vertical-two, .meeting-vertical-three {
+    height: 65vh;
+  }
