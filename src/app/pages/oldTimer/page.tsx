@@ -1,43 +1,37 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Home from "../../../../components/pages/home";
 import Game from "../../../../components/pages/game";
 import Navigation from "../../../../components/Navigation";
 import MusicPlayer from "../../../../components/MusicPlayer";
-import History from "../../../../components/pages/history";
 
 export default function oldTimer() {
-    
-    
-    const [subscribed, setSubscribed] = useState<boolean | null>(false);
+    const [subscribed, setSubscribed] = useState<boolean>(false);
     const [email, setEmail] = useState("");
-
     const [mainContent, setMainContent] = useState<React.JSX.Element>(<Home/>);
-
 
     useEffect(() => {
         const storedValue = localStorage.getItem("subscribed");
-        if (storedValue !== null) setSubscribed(JSON.parse(storedValue) as boolean);
-        else setSubscribed(false);
-
-        if (subscribed) {
-            document.querySelector(".Subscribed")!.innerHTML =
-                "Ви успішно підписались на розсилку від клубу OLDTIMER";
-            document.querySelector(".subscribe-form button")!.textContent =
-                "Відписатись";
+        if (storedValue !== null) {
+            const parsedValue = JSON.parse(storedValue) as boolean;
+            setSubscribed(parsedValue);
+            if (parsedValue) {
+                document.querySelector(".Subscribed")!.innerHTML =
+                    "Ви успішно підписались на розсилку від клубу OLDTIMER";
+                document.querySelector(".subscribe-form button")!.textContent =
+                    "Відписатись";
+            }
         }
     }, []);
 
-    
-
     function subscribe(event: React.MouseEvent | React.KeyboardEvent) {
-        event.preventDefault(); // To not refresh the page after subscribing
-        const emailEl = document.getElementById("emailInput") as HTMLInputElement;//the email adress of a user
+        event.preventDefault();
+        const emailEl = document.getElementById("emailInput") as HTMLInputElement;
 
         if (emailEl.value) {
             const email = emailEl.value;
             console.log(email);
-            emailEl.value = ""; // Clear input field
+            emailEl.value = "";
             if (!validateEmail(email)) {
                 document.querySelector(".Subscribed")!.innerHTML =
                     "Некоректно вказана електронна пошта";
@@ -45,7 +39,7 @@ export default function oldTimer() {
             }
 
             setSubscribed(true);
-            localStorage.setItem("subscribed", JSON.stringify(subscribed));
+            localStorage.setItem("subscribed", JSON.stringify(true));
             document.querySelector(".subscribe-form button")!.textContent =
                 "Відписатись";
             document.querySelector(".Subscribed")!.innerHTML =
@@ -59,17 +53,13 @@ export default function oldTimer() {
     }
 
     function unsubscribe(event: React.MouseEvent) {
-        event.preventDefault(); // To not refresh the page after unsubscribing
+        event.preventDefault();
         setSubscribed(false);
         localStorage.removeItem("subscribed");
         document.querySelector(".subscribe-form button")!.textContent =
             "Підписатись";
         document.querySelector(".Subscribed")!.innerHTML = "";
     }
-
-
-    
-
 
     return (
         <>
@@ -78,8 +68,6 @@ export default function oldTimer() {
                     setMainContent={setMainContent}
                 />
                 <MusicPlayer/>
-
-                
             </header>
 
             <main>
@@ -114,11 +102,15 @@ export default function oldTimer() {
                                 subscribe(e);
                         }}
                     >
-                        Підписатись
+                        {subscribed ? "Відписатись" : "Підписатись"}
                     </button>
                 </form>
                 <p className="Subscribed"></p>
-                <p className="small-link"><a href="#" onClick={(e) => { setMainContent(Game) }}>Хочете пройти маленький інтерактивчик?</a></p>
+                <p className="small-link">
+                    <a href="#" onClick={(e) => { e.preventDefault(); setMainContent(<Game/>) }}>
+                        Хочете пройти маленький інтерактивчик?
+                    </a>
+                </p>
             </section>
 
             <footer>
