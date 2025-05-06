@@ -77,7 +77,7 @@ const Home = () => {
                 <div className="contact-icons">
                     <div className="icon-box">
                         <a href="https://www.instagram.com/oldtimer.vn?igsh=MTR5YTc2ODNrbzhyNw==" target="_blank">
-                            <img src="/icons/instagram-icon.png" alt="Instagram" className="icon-large" />
+                            <img src="/photos/icons/instagram-icon.png" alt="Instagram" className="icon-large" />
                         </a>
                         <a href="https://www.instagram.com/oldtimer.vn?igsh=MTR5YTc2ODNrbzhyNw==" target="_blank">
                             <div className="icon-label">oldtimer.vn</div>
@@ -85,7 +85,7 @@ const Home = () => {
                     </div>
                     <div className="icon-box">
                         <a href="https://chat.whatsapp.com/Gowc8wF1BGsKmyyi0MuVCB" target="_blank">
-                            <img src="/icons/whatsapp-icon.png" alt="WhatsApp" className="icon-large" />
+                            <img src="/photos/icons/whatsapp-icon.png" alt="WhatsApp" className="icon-large" />
                         </a>
                         <a href="https://chat.whatsapp.com/Gowc8wF1BGsKmyyi0MuVCB" target="_blank">
                             <div className="icon-label">Oldtimer</div>
